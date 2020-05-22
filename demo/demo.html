@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Alpine-css</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../dist/styles.css" />
+</head>
+
+<body>
+    <main class="p-2 mx-auto w-xl pb-6">
+        <section>
+            <h1>Alpine-css</h1>
+            <p>Alpine style styles</p>
+        </section>
+
+        <section>
+            <ul>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#links">Buttons</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#blockquotes">Blockquotes</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#images">Images</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="links">Links</h2>
+            <a href="#">This is a normal link</a>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="buttons">Buttons</h2>
+
+            <a class="button" href="#">Link button</a>
+            <a class="button button-outline" href="#">Link button outline</a>
+            <a class="button button-clear" href="#">Link button clear</a>
+            <button>Default Button</button>
+            <button class="button-outline">Outline Button</button>
+            <button class="button-clear">Clear Button</button>
+            <input type="submit" value="Default Input">
+            <input type="button" value="Input Button">
+            <input class="button-solid" type="submit" value="Solid Input">
+            <input class="button-clear" type="submit" value="Clear Input">
+            <button disabled>Disabled Button</button>
+            <button disabled class="button-outline">Outline Button</button>
+            <button disabled class="button-clear">Clear Button</button>
+            <button class="w-expand">Full width</button>
+            <button class="w-expand shadow-primary">Shadow</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="forms">Forms</h2>
+            <form>
+                <fieldset>
+                    <legend>Legend in a fieldset</legend>
+                    <label>label</label>
+                    <input type="text" value="Text input">
+                    <input type="text" placeholder="Text input with placeholder...">
+                    <input type="text" disabled value="Disabled text input">
+                    <input type="text" readonly value="Readonly text input">
+                </fieldset>
+
+                <fieldset>
+                    <label>Select</label>
+                    <select>
+                        <option value="1">Cerro Torre</option>
+                        <option value="2">Fitz Roy</option>
+                        <option value="3">Torres del Paine</option>
+                        <optgroup label="Option group">
+                            <option value="4">Gasherbrum II</option>
+                            <option value="5">Makalu</option>
+                        </optgroup>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <label>Radio</label>
+                    <input type="radio" name="gender" value="1" checked> Arête<br>
+                    <input type="radio" name="gender" value="2"> Couloir<br>
+                    <input type="radio" name="gender" value="2"> Aiguille<br>
+                </fieldset>
+
+                <fieldset>
+                    <label>Text area</label>
+                    <textarea placeholder="Your comment here..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <label>Checkbox</label>
+                    <input type="checkbox">
+                </fieldset>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="tables">Tables</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Area</th>
+                        <th>Height</th>
+                        <th>First ascent</th>
+                        <th>Party</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cerro Torre</td>
+                        <td>Patagonia</td>
+                        <td>3,128 m</td>
+                        <td>2005</td>
+                        <td>Ermanno Salvaterra, Rolando Garibotti and Alessandro Beltrami</td>
+                    </tr>
+                    <tr>
+                        <td>Fitz Roy</td>
+                        <td>Patagonia</td>
+                        <td>3,405 m</td>
+                        <td>1952</td>
+                        <td>Lionel Terray and Guido Magnone </td>
+                    </tr>
+                    <tr>
+                        <td>Torres del Paine, Central Tower</td>
+                        <td>Patagonia</td>
+                        <td>2,460 m</td>
+                        <td>1963</td>
+                        <td>Chris Bonington, Don Whillans</td>
+                    </tr>
+                    <tr>
+                        <td>Gasherbrum II</td>
+                        <td>Karakoram</td>
+                        <td>8,035 m</td>
+                        <td>1956</td>
+                        <td>Fritz Moravec, Josef Larch and Hans Willenpart</td>
+                    </tr>
+                    <tr>
+                        <td>Makalu</td>
+                        <td>Himalayas</td>
+                        <td>8,463 m</td>
+                        <td>1955</td>
+                        <td> Lionel Terray and Jean Couzy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2 id="typography">Typography</h2>
+            <br>
+
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+
+            <p>Some text here in a normal paragraph</p>
+            <p>
+                Some text in a long paragraph. Lorem ipsum dolor sit amet, mea iuvaret accusamus in, wisi ponderum constituam cum at. Ad qui facer velit possim.
+                Ius ad animal temporibus. His id sonet dissentiunt. Per ea possit tincidunt. Eu mei gloriatur percipitur,
+                cu pri augue mandamus ullamcorper, in justo facilis pro. In dico posidonium nec, sonet iudicabit signiferumque eu duo.
+                Assum intellegebat his in, id dicat mucius inciderint has. Ut has nonumy virtute, lobortis maiestatis eu eum.
+                Ne quis singulis qualisque mel. At meis consectetuer vel. No purto dissentias adversarium ius, eos nisl corrumpit neglegentur ad.
+            </p>
+            <p>Some text here in a normal paragraph with different styles. <em>Emphasis</em> <small>small</small> <strong>strong</strong> <u>underline</u></p>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="blockquotes">Blockquotes</h2>
+
+            <blockquote>
+                <p><em>Block quotes in a paragraph and Emphasis</em></p>
+            </blockquote>
+
+            <blockquote>
+                Block quotes on their own
+            </blockquote>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="lists">Lists</h2>
+
+            <h4>Unordered list</h4>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>
+                    <ul>
+                        <li>2nd level item 1</li>
+                        <li>2nd level item 2</li>
+                        <li>2nd level item 3</li>
+                        <li>
+                            <ul>
+                                <li>3rd level item 1</li>
+                                <li>3rd level item 2</li>
+                                <li>3rd level item 3</li>
+                                <li>3rd level item 4</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Ordered list</h4>
+            <ol>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>
+                    <ol>
+                        <li>2nd level item 1</li>
+                        <li>2nd level item 2</li>
+                        <li>2nd level item 3</li>
+                        <li>
+                            <ol type="I">
+                                <li>3rd level item 1</li>
+                                <li>3rd level item 2</li>
+                                <li>3rd level item 3</li>
+                                <li>3rd level item 4</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+
+            <h4>Description Lists</h4>
+
+            <dl>
+                <dt>Category 1</dt>
+                <dd>Description 1</dd>
+                <dd>Description 2</dd>
+                <dd>Description 3</dd>
+                <dt>Category 2</dt>
+                <dd>Description 1</dd>
+                <dd>Description 2</dd>
+                <dd>Description 3</dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id=code>Code</h2>
+            <pre><code>
+Console.log('Hello world!');
+        </code></pre>
+
+            <pre><code>
+.danger{
+    color: red;
+}
+        </code></pre>
+
+
+            <pre>pre-only</pre>
+            <code>code-only</code>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="images">Images</h2>
+            <img src="img/large.jpg" alt="Large image">
+            <img src="img/small.jpg" alt="Small image">
+        </section>
+    </main>
+
+</body>
+
+</html>

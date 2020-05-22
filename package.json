@@ -1,0 +1,21 @@
+{
+    "name": "alpine-css",
+    "version": "0.0.1",
+    "description": "Alpine style styles",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/frsdun/alpine-css.git"
+    },
+    "homepage": "https://github.com/frsdun/alpine-css#readme",
+    "license": "MIT",
+    "scripts": {
+        "scss": "npm run build-scss && npm run minify-css",
+        "build-scss": "node ./node_modules/node-sass/bin/node-sass src/styles.scss dist/styles.css",
+        "watch-scss": "node ./node_modules/node-sass/bin/node-sass --watch src/styles.scss dist/styles.css",
+        "minify-css": "node ./node_modules/uglifycss/uglifycss dist/styles.css > dist/styles.min.css"
+    },
+    "devDependencies": {
+        "node-sass": "^4.12.0",
+        "uglifycss": "0.0.29"
+    }
+}

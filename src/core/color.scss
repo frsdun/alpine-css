@@ -1,0 +1,75 @@
+/* ------------------------ Color------------------------ */
+
+// All colors are defined and applied in this file
+// Use scss variables when the colour is fixed
+// Use css variables when the colour is theme based
+
+$select-drop-icon-color: rgb(
+    96,
+    108,
+    118
+) !default; // should match --color-black-light, is hardcoded because it is used for an inline svg. Must be rgb format
+
+// ------------------------ Color definitions ------------------------ //
+
+body {
+    // Identity
+    --color-primary-light: #3b9ffd;
+    --color-primary: #1890ff;
+    --color-primary-dark: #0c78dd;
+
+    --color-secondary-light: #a83fee;
+    --color-secondary: #920de9;
+    --color-secondary-dark: #7e0bca;
+
+    // Grey-scale
+    --color-white-light: #ffffff;
+    --color-white: #f4f5f6;
+    --color-white-dark: #eaebec;
+
+    // --color-grey-light: #aaaaaa;
+    // --color-grey: #808080;
+    // --color-grey-dark: #5f5f5f;
+
+    --color-black-light: #606c76;
+    --color-black: #424b52;
+    --color-black-dark: #212325;
+
+    // Alerts
+    --color-success-light: #61bb25;
+    --color-success: #61bb25;
+    --color-success-dark: #61bb25;
+
+    --color-info-light: #29c7c7;
+    --color-info: #29c7c7;
+    --color-info-dark: #29c7c7;
+
+    --color-warn-light: #ff5e00;
+    --color-warn: #ff5e00;
+    --color-warn-dark: #ff5e00;
+
+    --color-danger-light: #ff1e00;
+    --color-danger: #ff1e00;
+    --color-danger-dark: #ff1e00;
+
+    // Elements
+    --color-shadow: rgba(66, 75, 82, 0.2);
+    --color-shadow-primary: rgba(24, 143, 255, 0.4);
+}
+
+// Dark color css variables. Overwrite the variables that need to change
+.dark-mode {
+    --color-white-light: #606c76;
+    --color-white: #424b52;
+    --color-white-dark: #212325;
+
+    --color-black-light: #606c76;
+    --color-black: #f4f5f6;
+    --color-black-dark: #eaebec;
+}
+
+// ------------------------ Color assignments ------------------------ //
+body {
+    background: var(--color-white);
+    color: var(--color-black);
+}

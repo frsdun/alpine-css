@@ -1,0 +1,81 @@
+/* ------------------------ Flex ------------------------ */
+
+@mixin flex-builder($breakpoint-name) {
+    .flex#{$breakpoint-name} {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .flex-inline#{$breakpoint-name} {
+        display: inline-flex;
+    }
+    .flex-column#{$breakpoint-name} {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
+@include flex-builder("");
+@media (min-width: $breakpoint-s) {
+    @include flex-builder("\\@s");
+}
+@media (min-width: $breakpoint-m) {
+    @include flex-builder("\\@m");
+}
+@media (min-width: $breakpoint-l) {
+    @include flex-builder("\\@l");
+}
+
+// Horizontal alignment
+.flex-start {
+    justify-content: start;
+}
+.flex-center {
+    justify-content: center;
+}
+.flex-end {
+    justify-content: end;
+}
+.flex-between {
+    justify-content: space-between;
+}
+.flex-around {
+    justify-content: space-around;
+}
+.flex-evenly {
+    justify-content: space-evenly;
+}
+
+// Vertical alignment
+.flex-top {
+    align-items: start;
+}
+.flex-middle {
+    align-items: center;
+}
+.flex-bottom {
+    align-items: end;
+}
+.flex-stretch {
+    align-items: stretch;
+}
+.flex-baseline {
+    align-items: baseline;
+}
+
+// Wrap
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+// Reverse
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+.flex-reverse {
+    flex-direction: row-reverse;
+}

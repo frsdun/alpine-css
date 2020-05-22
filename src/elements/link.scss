@@ -1,0 +1,22 @@
+/* ------------------------ Link ------------------------ */
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    // @extend %transition-all;
+    cursor: pointer;
+    outline: 0;
+
+    &:focus,
+    &:hover {
+        color: var(--color-primary-light);
+    }
+
+    &:active {
+        color: var(--color-primary-dark);
+    }
+
+    &:visited {
+        color: var(--color-primary-light);
+    }
+}

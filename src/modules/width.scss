@@ -1,0 +1,136 @@
+/* ------------------------ Width ------------------------ */
+
+// The are 3 types of width define: fixed, fraction or option
+//  Fixed: s,m,l,xl,xxl,xxxl
+//  Fractions: 1-2, 1-3, 1-4, 1-5, 1-6, 2-3, 3-4, 2-5, 3-5, 4-5, 5-6
+//  Options: auto, expand
+// Width can be applied to either the element or all it's children
+// Width can be applied at a breakpoint: always, s, m, l
+
+// Syntax w-<children?>-<fixed|fraction|option>@<breakpoint>
+// w-s = width:15rem
+// w-1-2 = width:50%
+// w-1-4@l = On large screen and bigger width:20%
+// w-children-m@m = On medium screens and larger the children of this element will have width:30rem
+// w-auto = width:auto
+// w-expand@s = On small or larger screen width:100%
+
+$width-fixed-small: 15rem !default;
+$width-fixed-medium: 30rem !default;
+$width-fixed-large: 45rem !default;
+$width-fixed-x-large: $breakpoint-s !default; // 64rem
+$width-fixed-xx-large: $breakpoint-m !default; // 96rem
+$width-fixed-xxx-large: $breakpoint-l !default; // 120rem
+
+$width-map: (
+    "1-2": 50%,
+    "1-3": 33.3333%,
+    "2-3": 66.6666%,
+    "1-4": 25%,
+    "3-4": 75%,
+    "1-5": 20%,
+    "2-5": 40%,
+    "3-5": 60%,
+    "4-5": 80%,
+    "1-6": 16.6666%,
+    "5-6": 83.3333%,
+);
+
+@mixin width-builder($prefix, $suffix, $size) {
+    .w-#{$prefix}#{$suffix} {
+        max-width: $size;
+        width: 100%;
+    }
+    .w-children-#{$prefix}#{$suffix} > * {
+        max-width: $size;
+        width: 100%;
+    }
+}
+
+@mixin build-widths($breakpoint-name) {
+    // Dynamic
+    .w-auto#{$breakpoint-name} {
+        width: auto;
+        max-width: none;
+    }
+    .w-expand#{$breakpoint-name} {
+        width: 100%;
+        max-width: none;
+    }
+    .w-children-auto#{$breakpoint-name} > * {
+        width: auto;
+        max-width: none;
+    }
+    .w-children-expand#{$breakpoint-name} > * {
+        width: 100%;
+        max-width: none;
+    }
+    // Fixed
+    .w-s#{$breakpoint-name} {
+        max-width: $width-fixed-small;
+        width: 100%;
+    }
+    .w-m#{$breakpoint-name} {
+        max-width: $width-fixed-medium;
+        width: 100%;
+    }
+    .w-l#{$breakpoint-name} {
+        max-width: $width-fixed-large;
+        width: 100%;
+    }
+    .w-xl#{$breakpoint-name} {
+        max-width: $width-fixed-x-large;
+        width: 100%;
+    }
+    .w-xxl#{$breakpoint-name} {
+        max-width: $width-fixed-xx-large;
+        width: 100%;
+    }
+    .w-xxxl#{$breakpoint-name} {
+        max-width: $width-fixed-xxx-large;
+        width: 100%;
+    }
+    // Fixed Children
+    .w-children-s#{$breakpoint-name} > * {
+        max-width: $width-fixed-small;
+        width: 100%;
+    }
+    .w-children-m#{$breakpoint-name} > * {
+        max-width: $width-fixed-medium;
+        width: 100%;
+    }
+    .w-children-l#{$breakpoint-name} > * {
+        max-width: $width-fixed-large;
+        width: 100%;
+    }
+    .w-children-xl#{$breakpoint-name} > * {
+        max-width: $width-fixed-x-large;
+        width: 100%;
+    }
+    .w-children-xxl#{$breakpoint-name} > * {
+        max-width: $width-fixed-xx-large;
+        width: 100%;
+    }
+    .w-children-xxxl#{$breakpoint-name} > * {
+        max-width: $width-fixed-xxx-large;
+        width: 100%;
+    }
+    // Fractions
+    @each $key, $value in $width-map {
+        @include width-builder($key, $breakpoint-name, $value);
+    }
+}
+
+// Apply the mixin defined above
+
+@include build-widths("");
+
+@media (min-width: $breakpoint-s) {
+    @include build-widths("\\@s");
+}
+@media (min-width: $breakpoint-m,) {
+    @include build-widths("\\@m");
+}
+@media (min-width: $breakpoint-l) {
+    @include build-widths("\\@l");
+}

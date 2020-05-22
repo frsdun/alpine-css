@@ -1,0 +1,16 @@
+/* ------------------------ List ------------------------ */
+
+ul,
+ol,
+dl{
+    padding-left: 2rem;
+    margin-top: 0;
+}
+
+ul{
+    list-style: circle outside;
+}
+
+ol{
+    list-style: decimal outside;
+}

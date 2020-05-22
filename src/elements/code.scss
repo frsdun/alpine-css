@@ -1,0 +1,25 @@
+/* ------------------------ Code ------------------------ */
+
+code {
+    border-radius: 0.4rem;
+    margin: 0 0.2rem;
+    padding: 0.8rem 1rem;
+    white-space: normal;
+    background-color: var(--color-white-dark);
+    color: var(--color-black);
+}
+
+pre {
+    border-left: 0.3rem solid var(--color-primary);
+    padding-left: 2rem;
+    overflow-y: hidden;
+    background-color: var(--color-white-dark);
+    color: var(--color-black);
+
+    & > code {
+        border-radius: 0;
+        display: block;
+        padding: 1rem 1.5rem;
+        white-space: pre;
+    }
+}

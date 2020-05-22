@@ -1,0 +1,107 @@
+/* ------------------------ Button ------------------------ */
+
+// Exposes 3 class names
+// 1. button
+// 2. button-outline
+// 3. button-clear
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 0.1rem solid var(--color-primary);
+    border-radius: 0.2rem;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3.8rem;
+    letter-spacing: 0.05rem;
+    line-height: 3.6rem;
+    padding: 0 3rem;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    // text-transform: uppercase;
+    // @extend %shadow-primary;
+    @extend %transition-color;
+
+    &:focus,
+    &:hover {
+        background-color: var(--color-primary-light);
+        border-color: var(--color-primary-light);
+        color: var(--color-white-light);
+        outline: 0;
+        //@extend %shadow;
+    }
+
+    &:active {
+        // background-color: $base-color-button-text
+        // border-color: $base-color-button-background
+        // color: $base-color-button-background
+        color: var(--color-white-light);
+        outline: 0;
+    }
+
+    &:visited {
+        color: var(--color-white);
+    }
+
+    &[disabled] {
+        cursor: default;
+        opacity: 0.5;
+
+        &:focus,
+        &:hover {
+            // opacity: 0.4;
+            background-color: var(--color-black-light);
+            border-color: var(--color-black-light);
+        }
+    }
+
+    &.button-outline {
+        background-color: transparent;
+        color: var(--color-primary);
+        border: 0.1rem solid var(--color-primary);
+
+        &:focus,
+        &:hover {
+            // background-color: $base-color-button-alternate;
+            border-color: var(--color-primary-dark);
+            color: var(--color-primary-dark);
+        }
+        &[disabled] {
+            &:focus,
+            &:hover {
+                border-color: var(--color-black-light);
+                color: var(--color-black-light);
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.button-clear {
+        background-color: transparent;
+        border-color: transparent;
+        color: var(--color-primary);
+
+        &:focus,
+        &:hover {
+            background-color: transparent;
+            border-color: var(--color-primary);
+            color: var(--color-primary-light);
+        }
+
+        &[disabled] {
+            &:focus,
+            &:hover {
+                border-color: var(--color-black-light);
+                color: var(--color-black-light);
+            }
+        }
+    }
+}
