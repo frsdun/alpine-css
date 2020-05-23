@@ -1,0 +1,43 @@
+/* ------------------------ Color ------------------------ */
+$color-map: (
+    "white-light": --color-white-light,
+    "white": --color-white,
+    "white-dark": --color-white-dark,
+    //
+        "primary-light": --color-primary-light,
+    "primary": --color-primary,
+    "primary-dark": --color-primary-dark,
+    //
+        "black-light": --color-black-light,
+    "black": --color-black,
+    "black-dark": --color-black-dark,
+    //
+        "success-light": --color-success-light,
+    "success": --color-success,
+    "success-dark": --color-success-dark,
+    //
+        "info-light": --color-info-light,
+    "info": --color-info,
+    "info-dark": --color-info-dark,
+    //
+        "warn-light": --color-warn-light,
+    "warn": --color-warn,
+    "warn-dark": --color-warn-dark,
+    //
+        "danger-light": --color-danger-light,
+    "danger": --color-danger,
+    "danger-dark": --color-danger-dark,
+);
+
+@mixin color-builder($color, $var) {
+    .color-#{$color} {
+        color: var($var);
+    }
+    .bg-#{$color} {
+        background: var($var);
+    }
+}
+
+@each $key, $value in $color-map {
+    @include color-builder($key, $value);
+}

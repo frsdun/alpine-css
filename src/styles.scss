@@ -16,7 +16,12 @@
 @import "elements/list";
 @import "elements/link";
 @import "elements/table";
+@import "elements/spacing";
 // Optional
-@import "modules/spacing";
-@import "modules/width";
-@import "modules/flex";
+@import "utilities/spacing";
+@import "utilities/width";
+@import "utilities/flex";
+@import "utilities/text";
+@import "utilities/display";
+@import "utilities/position";
+@import "utilities/color";

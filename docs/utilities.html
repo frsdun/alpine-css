@@ -12,6 +12,13 @@
 
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/styles.min.css" />
+
+    <style>
+        /* Page specific styles */
+        section {
+            margin-bottom: 6rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,15 +37,19 @@
                 <li><a href="#spacing">Spacing</a></li>
                 <li><a href="#width">Width</a></li>
                 <li><a href="#flex">Flex</a></li>
+                <li><a href="#display">Display</a></li>
+                <li><a href="#position">Position</a></li>
+                <li><a href="#text">Text</a></li>
+                <li><a href="#color">Color</a></li>
             </ul>
         </section>
         <hr>
         <section>
             <h2 id="spacing">Spacing</h2>
             <p>The spacing utility classes offer an easy way to control padding and margins of elements</p>
-            <p>
-                <code>{property}{sides}-{size}@{screen-size}</code><br>
-            </p>
+
+            <pre><code>{property}{sides}-{size}@{screen-size?}</code></pre>
+
             <table>
                 <tr>
                     <td>{property}</td>
@@ -58,27 +69,58 @@
                 <tr>
                     <td>{screen-size}</td>
                     <td>
+                        empty = at all screen sizes<br>
                         @s = at small breakpoint and up<br>
                         @m = at medium breakpoint and up<br>
                         @l = at large breakpoint and up
                     </td>
                 </tr>
             </table>
-            <h4>Examples</h4>
-            <div class="flex-column">
-                <div class="mb-2"><code class="mr-1">p-1</code><span>Padding size 1</span></div>
-                <div class="mb-2"><code class="mr-1">m-3</code><span>Margin size 3</span></div>
-                <div class="mb-2"><code class="mr-1">pr-3</code><span>Padding right size 3</span></div>
-                <div class="mb-2"><code class="mr-1">mb-0</code><span>Margin bottom set to zero</span></div>
-                <div class="mb-2"><code class="mr-1">px-2</code><span>Padding horizontal size 2</span></div>
-                <div class="mb-2"><code class="mr-1">py-2</code><span>Padding vertical size 3,</span></div>
-                <div class="mb-2"><code class="mr-1">pr-3@l</code><span>Padding right size 3, only on large screens and up</span></div>
-                <div class="mb-2"><code class="mr-1">mb-2@s</code><span>Margin bottom size 2, only on small screens and up</span></div>
-                <div class="mb-2"><code class="mr-1">ml-auto</code><span></span>Margin left set to auto</div>
-                <div class="mb-2"><code class="mr-1">mr-auto</code><span></span>Margin right set to auto</div>
-                <div class="mb-2"><code class="mr-1">mx-auto</code><span></span>Center horizontally. Margins left and right set to auto</div>
-            </div>
-            <h4>Default sizes</h4>
+            <h3>Examples</h3>
+            <table>
+                <tr>
+                    <td><code>p-1</code></td>
+                    <td>Padding size 1</td>
+                </tr>
+                <tr>
+                    <td><code>m-3</code></td>
+                    <td>Margin size 3</td>
+                </tr>
+                <tr>
+                    <td><code>pr-3</code></td>
+                    <td>Padding right size 3</td>
+                </tr>
+                <tr>
+                    <td><code>mb-0</code></td>
+                    <td>Margin bottom set to zero</td>
+                </tr>
+                <tr>
+                    <td><code>px-2</code></td>
+                    <td>Padding horizontal size 2</td>
+                </tr>
+                <tr>
+                    <td><code>py-3</code></td>
+                    <td>Padding vertical size 3</td>
+                </tr>
+                <tr>
+                    <td><code>pr-3@l</code></td>
+                    <td>Padding right size 3, only on large screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>mb-2@s</code></td>
+                    <td>Margin bottom size 2, only on small screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>ml-auto</code></td>
+                    <td>Margin left set to auto</td>
+                </tr>
+                <tr>
+                    <td><code>mx-auto</code></td>
+                    <td>Center horizontally. Margins left and right set to auto</td>
+                </tr>
+            </table>
+
+            <h3>Default sizes</h3>
             <ul>
                 <li>0 = None</li>
                 <li>1 = 1rem / 10px</li>
@@ -93,10 +135,353 @@
         <hr>
         <section>
             <h2 id="width">Width</h2>
+            <p>
+                Utility classes to set the width of elements or the width of an elements children
+            </p>
+
+            <pre><code>w-{children?}-{size}@{screen-size?}</code></pre>
+            <table>
+                <tr>
+                    <td>{children?}</td>
+                    <td>Optionally target the children</td>
+                </tr>
+                <tr>
+                    <td>{size}</td>
+                    <td>
+                        Fixed: s, m, l, xl, xxl, xxxl<br>
+                        Fraction: 1-2, 1-3, 1-4, 1-5, 1-6, 2-3, 3-4, 2-5, 3-5, 4-5, 5-6<br>
+                        Special: auto, expand
+                    </td>
+                </tr>
+                <tr>
+                    <td>{screen-size}</td>
+                    <td>
+                        empty = at all screen sizes<br>
+                        @s = at small breakpoint and up<br>
+                        @m = at medium breakpoint and up<br>
+                        @l = at large breakpoint and up
+                    </td>
+                </tr>
+            </table>
+            <h3>Examples</h3>
+            <table>
+                <tr>
+                    <td><code>w-m</code></td>
+                    <td>Width medium</td>
+                </tr>
+                <tr>
+                    <td><code>w-m@l</code></td>
+                    <td>Width medium on large screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>w-1-2</code></td>
+                    <td>Width half (50%) of parent</td>
+                </tr>
+                <tr>
+                    <td><code>w-3-5</code></td>
+                    <td>Width three fifths or parent width</td>
+                </tr>
+                <tr>
+                    <td><code>w-children-1-2</code></td>
+                    <td>Child width all 50% of parent</td>
+                </tr>
+                <tr>
+                    <td><code>w-children-1-6@s</code></td>
+                    <td>Child width one 6th of parent on small screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>w-expand</code></td>
+                    <td>Width 100%</td>
+                </tr>
+                <tr>
+                    <td><code>w-auto</code></td>
+                    <td>Default width</td>
+                </tr>
+            </table>
+
+            <h3>Default sizes</h3>
+            <ul>
+                <li>s = 15rem / 150px</li>
+                <li>m = 30rem / 300px</li>
+                <li>l = 45rem / 450px</li>
+                <li>xl = 64rem / 640px</li>
+                <li>xxl = 96rem / 960px</li>
+                <li>xxxl = 120rem / 1200px</li>
+            </ul>
+
         </section>
         <hr>
         <section>
             <h2 id="flex">Flex</h2>
+            <p>
+                Utility classes to set the display property to flex-box
+            </p>
+
+            <pre><code>flex-{option}@{screen-size}</code></pre>
+            <h3>Examples</h3>
+
+            <table>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><code>flex</code></td>
+                    <td>Display flex-box and justify spaced</td>
+                </tr>
+                <tr>
+                    <td><code>flex@s</code></td>
+                    <td>From small screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex@m</code></td>
+                    <td>From medium screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex@l</code></td>
+                    <td>From large screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex-inline</code></td>
+                    <td>Display inline flex-box</td>
+                </tr>
+                <tr>
+                    <td><code>flex-inline@s</code></td>
+                    <td>From small screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex-inline@m</code></td>
+                    <td>From medium screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex-inline@l</code></td>
+                    <td>From large screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex-column</code></td>
+                    <td>Display flex-box vertically</td>
+                </tr>
+                <tr>
+                    <td><code>flex-column@s</code></td>
+                    <td>From small screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex-column@m</code></td>
+                    <td>From medium screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>flex-column@l</code></td>
+                    <td>From large screens and up</td>
+                </tr>
+            </table>
+
+            <h3>Horizontal alignment</h3>
+            <table>
+                <tr>
+                    <td><code>flex-start</code></td>
+                    <td>Justify content left</td>
+                </tr>
+                <tr>
+                    <td><code>flex-center</code></td>
+                    <td>Justify content center</td>
+                </tr>
+                <tr>
+                    <td><code>flex-end</code></td>
+                    <td>Justify content right</td>
+                </tr>
+                <tr>
+                    <td><code>flex-between</code></td>
+                    <td>Justify content between</td>
+                </tr>
+                <tr>
+                    <td><code>flex-around</code></td>
+                    <td>Justify content around</td>
+                </tr>
+                <tr>
+                    <td><code>flex-evenly</code></td>
+                    <td>Justify content evenly</td>
+                </tr>
+            </table>
+            <h3>Vertical alignment</h3>
+            <table>
+                <tr>
+                    <td><code>flex-top</code></td>
+                    <td>Justify content top</td>
+                </tr>
+                <tr>
+                    <td><code>flex-middle</code></td>
+                    <td>Justify content middle</td>
+                </tr>
+                <tr>
+                    <td><code>flex-bottom</code></td>
+                    <td>Justify content bottom</td>
+                </tr>
+                <tr>
+                    <td><code>flex-stretch</code></td>
+                    <td>Justify content stretch</td>
+                </tr>
+                <tr>
+                    <td><code>flex-baseline</code></td>
+                    <td>Justify content baseline</td>
+                </tr>
+            </table>
+
+            <h3>Wrap and Reverse</h3>
+            <table>
+                <tr>
+                    <td><code>flex-wrap</code></td>
+                    <td>Wrap items</td>
+                </tr>
+                <tr>
+                    <td><code>flex-wrap-reverse</code></td>
+                    <td>Wrap items in reverse</td>
+                </tr>
+                <tr>
+                    <td><code>flex-reverse</code></td>
+                    <td>Reverse the items</td>
+                </tr>
+                <tr>
+                    <td><code>flex-column-reverse</code></td>
+                    <td>Reverse the items in columns</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="display">Display</h2>
+            <pre><code>d-{option}</code></pre>
+            <table>
+                <tr>
+                    <td><code>d-block</code></td>
+                    <td>Display block</td>
+                </tr>
+                <tr>
+                    <td><code>d-inline</code></td>
+                    <td>Display inline</td>
+                </tr>
+                <tr>
+                    <td><code>d-inline-block</code></td>
+                    <td>Display inline block</td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section>
+            <h2 id="position">Position</h2>
+            <pre><code>p-{option}</code></pre>
+            <table>
+                <tr>
+                    <td><code>p-absolute</code></td>
+                    <td>Position absolute</td>
+                </tr>
+                <tr>
+                    <td><code>p-relative</code></td>
+                    <td>Position relative</td>
+                </tr>
+                <tr>
+                    <td><code>p-static</code></td>
+                    <td>Position static</td>
+                </tr>
+                <tr>
+                    <td><code>p-sticky</code></td>
+                    <td>Position sticky</td>
+                </tr>
+                <tr>
+                    <td><code>p-inherit</code></td>
+                    <td>Position inherit</td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section>
+            <h2 id="text">Text</h2>
+            <pre><code>text-{option}</code></pre>
+            <table>
+                <tr>
+                    <td><code>text-center</code></td>
+                    <td>Align text center</td>
+                </tr>
+                <tr>
+                    <td><code>text-left</code></td>
+                    <td>Align text left</td>
+                </tr>
+                <tr>
+                    <td><code>text-right</code></td>
+                    <td>Align text right</td>
+                </tr>
+                <tr>
+                    <td><code>text-upper</code></td>
+                    <td>Text to upper case</td>
+                </tr>
+                <tr>
+                    <td><code>text-lower</code></td>
+                    <td>Text to lower case</td>
+                </tr>
+                <tr>
+                    <td><code>text-caps</code></td>
+                    <td>Text to all caps</td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section>
+            <h2 id="color">Color</h2>
+            <pre><code>{target}-{color}-{shade?}</code></pre>
+            <table>
+                <tr>
+                    <td>{target}</td>
+                    <td>color, bg = background</td>
+                </tr>
+                <tr>
+                    <td>{color}</td>
+                    <td>primary, white, black, success, info, warn, danger</td>
+                </tr>
+                <tr>
+                    <td>{shade}</td>
+                    <td>Empty, light or dark</td>
+                </tr>
+            </table>
+            <div class="flex w-children-1-3@s">
+                <div class="text-center p-4 bg-primary-light">bg-primary-light</div>
+                <div class="text-center p-4 bg-primary">bg-primary</div>
+                <div class="text-center p-4 bg-primary-dark">bg-primary-dark</div>
+            </div>
+            <div class="flex w-children-1-3@s">
+                <div class="text-center p-4 bg-white-light">bg-white-light</div>
+                <div class="text-center p-4 bg-white">bg-white</div>
+                <div class="text-center p-4 bg-white-dark">bg-white-dark</div>
+            </div>
+            <div class="flex w-children-1-3@s">
+                <div class="text-center p-4 bg-black-light color-white">bg-black-light</div>
+                <div class="text-center p-4 bg-black color-white">bg-black</div>
+                <div class="text-center p-4 bg-black-dark color-white">bg-black-dark</div>
+            </div>
+            <div class="flex w-children-1-3@s">
+                <div class="text-center p-4 bg-success-light">bg-success-light</div>
+                <div class="text-center p-4 bg-success">bg-success</div>
+                <div class="text-center p-4 bg-success-dark">bg-success-dark</div>
+            </div>
+            <div class="flex w-children-1-3@s">
+                <div class="text-center p-4 bg-info-light">bg-info-light</div>
+                <div class="text-center p-4 bg-info">bg info</div>
+                <div class="text-center p-4 bg-info-dark">bg info-dark</div>
+            </div>
+            <div class="flex w-children-1-3@s">
+                <div class="text-center p-4 bg-warn-light">bg-warn-light</div>
+                <div class="text-center p-4 bg-warn">bg-warn</div>
+                <div class="text-center p-4 bg-warn-dark">bg-warn-dark</div>
+            </div>
+            <div class="flex w-children-1-3@s">
+                <div class="text-center p-4 bg-danger-light">bg-danger-light</div>
+                <div class="text-center p-4 bg-danger">bg-danger</div>
+                <div class="text-center p-4 bg-danger-dark">bg-danger-dark</div>
+            </div>
+            <p class="mt-3">
+                Some colors have a dark-mode alternative that are applied if the class
+                <code>dark-mode</code> is added to the body tag
+            </p>
         </section>
 
         <script src="js/script.js"></script>

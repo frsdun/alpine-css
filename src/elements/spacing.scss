@@ -1,0 +1,27 @@
+/* ------------------------ Spacing ------------------------ */
+
+// margin-bottom is not used anywhere else, only in spacing
+
+.button,
+button {
+    margin-bottom: 1rem;
+}
+
+fieldset,
+input,
+select,
+textarea {
+    margin-bottom: 1.5rem;
+}
+
+blockquote,
+figure,
+form,
+ul,
+ol,
+dl,
+p,
+pre,
+table {
+    margin-bottom: 2.5rem;
+}

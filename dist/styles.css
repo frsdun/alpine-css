@@ -175,8 +175,8 @@ body {
   --color-secondary: #920de9;
   --color-secondary-dark: #7e0bca;
   --color-white-light: #ffffff;
-  --color-white: #f4f5f6;
-  --color-white-dark: #eaebec;
+  --color-white: #e8ebec;
+  --color-white-dark: #e3e5e7;
   --color-black-light: #606c76;
   --color-black: #424b52;
   --color-black-dark: #212325;
@@ -559,19 +559,19 @@ blockquote {
 
 /* ------------------------ Code ------------------------ */
 code {
-  border-radius: 0.4rem;
   margin: 0 0.2rem;
-  padding: 0.8rem 1rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.4rem;
   white-space: normal;
   background-color: var(--color-white-dark);
-  color: var(--color-black); }
+  color: var(--color-black-dark); }
 
 pre {
+  padding: 0.8rem 1rem 0.8rem 2rem;
   border-left: 0.3rem solid var(--color-primary);
-  padding-left: 2rem;
   overflow-y: hidden;
   background-color: var(--color-white-dark);
-  color: var(--color-black); }
+  color: var(--color-black-dark); }
   pre > code {
     border-radius: 0;
     display: block;
@@ -637,6 +637,28 @@ th {
 
 tr:hover {
   background-color: var(--color-white-light); }
+
+/* ------------------------ Spacing ------------------------ */
+.button,
+button {
+  margin-bottom: 1rem; }
+
+fieldset,
+input,
+select,
+textarea {
+  margin-bottom: 1.5rem; }
+
+blockquote,
+figure,
+form,
+ul,
+ol,
+dl,
+p,
+pre,
+table {
+  margin-bottom: 2.5rem; }
 
 /* ------------------------ Spacing (Padding and Margins) ------------------------ */
 .p-0 {
@@ -1557,8 +1579,180 @@ tr:hover {
 .flex-wrap-reverse {
   flex-wrap: wrap-reverse; }
 
+.flex-reverse {
+  flex-direction: row-reverse; }
+
 .flex-column-reverse {
   flex-direction: column-reverse; }
 
-.flex-reverse {
-  flex-direction: row-reverse; }
+/* ------------------------ Text ------------------------ */
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-upper {
+  text-transform: uppercase; }
+
+.text-lower {
+  text-transform: lowercase; }
+
+.text-caps {
+  text-transform: capitalize; }
+
+/* ------------------------ Display ------------------------ */
+.d-block {
+  display: block; }
+
+.d-inline {
+  display: inline; }
+
+.d-inline-block {
+  display: inline-block; }
+
+/* ------------------------ Position ------------------------ */
+.p-absolute {
+  position: absolute; }
+
+.p-relative {
+  position: relative; }
+
+.p-static {
+  position: static; }
+
+.p-sticky {
+  position: sticky; }
+
+.p-inherit {
+  position: inherit; }
+
+/* ------------------------ Color ------------------------ */
+.color-white-light {
+  color: var(--color-white-light); }
+
+.bg-white-light {
+  background: var(--color-white-light); }
+
+.color-white {
+  color: var(--color-white); }
+
+.bg-white {
+  background: var(--color-white); }
+
+.color-white-dark {
+  color: var(--color-white-dark); }
+
+.bg-white-dark {
+  background: var(--color-white-dark); }
+
+.color-primary-light {
+  color: var(--color-primary-light); }
+
+.bg-primary-light {
+  background: var(--color-primary-light); }
+
+.color-primary {
+  color: var(--color-primary); }
+
+.bg-primary {
+  background: var(--color-primary); }
+
+.color-primary-dark {
+  color: var(--color-primary-dark); }
+
+.bg-primary-dark {
+  background: var(--color-primary-dark); }
+
+.color-black-light {
+  color: var(--color-black-light); }
+
+.bg-black-light {
+  background: var(--color-black-light); }
+
+.color-black {
+  color: var(--color-black); }
+
+.bg-black {
+  background: var(--color-black); }
+
+.color-black-dark {
+  color: var(--color-black-dark); }
+
+.bg-black-dark {
+  background: var(--color-black-dark); }
+
+.color-success-light {
+  color: var(--color-success-light); }
+
+.bg-success-light {
+  background: var(--color-success-light); }
+
+.color-success {
+  color: var(--color-success); }
+
+.bg-success {
+  background: var(--color-success); }
+
+.color-success-dark {
+  color: var(--color-success-dark); }
+
+.bg-success-dark {
+  background: var(--color-success-dark); }
+
+.color-info-light {
+  color: var(--color-info-light); }
+
+.bg-info-light {
+  background: var(--color-info-light); }
+
+.color-info {
+  color: var(--color-info); }
+
+.bg-info {
+  background: var(--color-info); }
+
+.color-info-dark {
+  color: var(--color-info-dark); }
+
+.bg-info-dark {
+  background: var(--color-info-dark); }
+
+.color-warn-light {
+  color: var(--color-warn-light); }
+
+.bg-warn-light {
+  background: var(--color-warn-light); }
+
+.color-warn {
+  color: var(--color-warn); }
+
+.bg-warn {
+  background: var(--color-warn); }
+
+.color-warn-dark {
+  color: var(--color-warn-dark); }
+
+.bg-warn-dark {
+  background: var(--color-warn-dark); }
+
+.color-danger-light {
+  color: var(--color-danger-light); }
+
+.bg-danger-light {
+  background: var(--color-danger-light); }
+
+.color-danger {
+  color: var(--color-danger); }
+
+.bg-danger {
+  background: var(--color-danger); }
+
+.color-danger-dark {
+  color: var(--color-danger-dark); }
+
+.bg-danger-dark {
+  background: var(--color-danger-dark); }

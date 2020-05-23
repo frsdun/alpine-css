@@ -1,20 +1,21 @@
 /* ------------------------ Code ------------------------ */
 
 code {
-    border-radius: 0.4rem;
     margin: 0 0.2rem;
-    padding: 0.8rem 1rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0.4rem;
     white-space: normal;
     background-color: var(--color-white-dark);
-    color: var(--color-black);
+    color: var(--color-black-dark);
 }
 
 pre {
+    // margin: 0 0.2rem;
+    padding: 0.8rem 1rem 0.8rem 2rem;
     border-left: 0.3rem solid var(--color-primary);
-    padding-left: 2rem;
     overflow-y: hidden;
     background-color: var(--color-white-dark);
-    color: var(--color-black);
+    color: var(--color-black-dark);
 
     & > code {
         border-radius: 0;
