@@ -12,7 +12,8 @@
         "scss": "npm run build-scss && npm run minify-css",
         "build-scss": "node ./node_modules/node-sass/bin/node-sass src/styles.scss dist/styles.css",
         "watch-scss": "node ./node_modules/node-sass/bin/node-sass --watch src/styles.scss dist/styles.css",
-        "minify-css": "node ./node_modules/uglifycss/uglifycss dist/styles.css > dist/styles.min.css"
+        "minify-css": "node ./node_modules/uglifycss/uglifycss dist/styles.css > dist/styles.min.css",
+        "publish": "./publish.sh"
     },
     "devDependencies": {
         "node-sass": "^4.12.0",
