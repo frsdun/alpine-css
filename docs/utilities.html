@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <nav class="w-xl p-2 mx-auto flex flex-start">
+    <nav class="w-xl p-2 mx-auto flex-start">
         <a class="mr-2" href="index.html">Elements</a>
         <strong class="mr-2">Utility classes</strong>
         <a id="js-dark-mode" class="ml-auto">Dark mode</a>
@@ -40,8 +40,8 @@
                 <li><a href="#display">Display</a></li>
                 <li><a href="#position">Position</a></li>
                 <li><a href="#text">Text</a></li>
-                <li><a href="#color">Color</a></li>
                 <li><a href="#visibility">Visibility</a></li>
+                <li><a href="#color">Color</a></li>
             </ul>
         </section>
         <hr>
@@ -140,10 +140,10 @@
                 Utility classes to set the width of elements or the width of an elements children
             </p>
 
-            <pre><code>w-{children?}-{size}@{screen-size?}</code></pre>
+            <pre><code>{child?}-w-{size}@{screen-size?}</code></pre>
             <table>
                 <tr>
-                    <td>{children?}</td>
+                    <td>{child?}</td>
                     <td>Optionally target the children</td>
                 </tr>
                 <tr>
@@ -386,8 +386,32 @@
             </table>
         </section>
         <hr>
+
         <section>
-            <h2 id="color">Color</h2>
+            <h2 id="#visibility">Visibility</h2>
+            <table>
+                <tr>
+                    <td><code>hide</code></td>
+                    <td>Display set to none on all screens</td>
+                </tr>
+                <tr>
+                    <td><code>hide@s</code></td>
+                    <td>Display set to none on small screens and up</td>
+                </tr>
+                <tr>
+                    <td><code>hide@m</code></td>
+                    <td>Display set to none on medium screens and up </td>
+                </tr>
+                <tr>
+                    <td><code>hide@l</code></td>
+                    <td>Display set to none on large screens and up </td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+
+        <section>
+            <h2 id="color">Color (Not included in utilities Only version)</h2>
             <pre><code>{target}-{color}-{shade?}</code></pre>
             <table>
                 <tr>
@@ -444,23 +468,7 @@
             </p>
         </section>
 
-        <hr>
 
-        <section>
-            <h2 id="#visibility">Visibility</h2>
-            <table>
-                <tr>
-                    <td><code>hide</code></td>
-                    <td>Display set to none on all screens</td>
-                    <td><code>hide@s</code></td>
-                    <td>Display set to none on small screens and up</td>
-                    <td><code>hide@m</code></td>
-                    <td>Display set to none on medium screens and up </td>
-                    <td><code>hide@l</code></td>
-                    <td>Display set to none on large screens and up </td>
-                </tr>
-            </table>
-        </section>
 
         <script src="js/script.js"></script>
     </main>
