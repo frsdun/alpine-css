@@ -41,6 +41,7 @@
                 <li><a href="#position">Position</a></li>
                 <li><a href="#text">Text</a></li>
                 <li><a href="#color">Color</a></li>
+                <li><a href="#visibility">Visibility</a></li>
             </ul>
         </section>
         <hr>
@@ -67,7 +68,7 @@
                     <td>0 - 6</td>
                 </tr>
                 <tr>
-                    <td>{screen-size}</td>
+                    <td>{screen-size?}</td>
                     <td>
                         empty = at all screen sizes<br>
                         @s = at small breakpoint and up<br>
@@ -149,12 +150,12 @@
                     <td>{size}</td>
                     <td>
                         Fixed: s, m, l, xl, xxl, xxxl<br>
-                        Fraction: 1-2, 1-3, 1-4, 1-5, 1-6, 2-3, 3-4, 2-5, 3-5, 4-5, 5-6<br>
-                        Special: auto, expand
+                        Fraction: 1-1, 1-2, 1-3, 1-4, 1-5, 1-6, 2-3, 3-4, 2-5, 3-5, 4-5, 5-6<br>
+                        Special: auto
                     </td>
                 </tr>
                 <tr>
-                    <td>{screen-size}</td>
+                    <td>{screen-size?}</td>
                     <td>
                         empty = at all screen sizes<br>
                         @s = at small breakpoint and up<br>
@@ -178,20 +179,20 @@
                     <td>Width half (50%) of parent</td>
                 </tr>
                 <tr>
+                    <td><code>w-1-1</code></td>
+                    <td>100% width of parent</td>
+                </tr>
+                <tr>
                     <td><code>w-3-5</code></td>
                     <td>Width three fifths or parent width</td>
                 </tr>
                 <tr>
-                    <td><code>w-children-1-2</code></td>
+                    <td><code>child-w-1-2</code></td>
                     <td>Child width all 50% of parent</td>
                 </tr>
                 <tr>
-                    <td><code>w-children-1-6@s</code></td>
+                    <td><code>child-w-1-6@s</code></td>
                     <td>Child width one 6th of parent on small screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>w-expand</code></td>
-                    <td>Width 100%</td>
                 </tr>
                 <tr>
                     <td><code>w-auto</code></td>
@@ -214,66 +215,11 @@
         <section>
             <h2 id="flex">Flex</h2>
             <p>
-                Utility classes to set the display property to flex-box
+                Utility classes to set the display property to flex-box<br>
+                All flex classes can have the @s, @m and @l screen-size selector added
             </p>
 
-            <pre><code>flex-{option}@{screen-size}</code></pre>
-            <h3>Examples</h3>
-
-            <table>
-                <tr>
-                    <th>Class</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td><code>flex</code></td>
-                    <td>Display flex-box and justify spaced</td>
-                </tr>
-                <tr>
-                    <td><code>flex@s</code></td>
-                    <td>From small screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex@m</code></td>
-                    <td>From medium screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex@l</code></td>
-                    <td>From large screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex-inline</code></td>
-                    <td>Display inline flex-box</td>
-                </tr>
-                <tr>
-                    <td><code>flex-inline@s</code></td>
-                    <td>From small screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex-inline@m</code></td>
-                    <td>From medium screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex-inline@l</code></td>
-                    <td>From large screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex-column</code></td>
-                    <td>Display flex-box vertically</td>
-                </tr>
-                <tr>
-                    <td><code>flex-column@s</code></td>
-                    <td>From small screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex-column@m</code></td>
-                    <td>From medium screens and up</td>
-                </tr>
-                <tr>
-                    <td><code>flex-column@l</code></td>
-                    <td>From large screens and up</td>
-                </tr>
-            </table>
+            <pre><code>flex-{option}@{screen-size?}</code></pre>
 
             <h3>Horizontal alignment</h3>
             <table>
@@ -302,6 +248,7 @@
                     <td>Justify content evenly</td>
                 </tr>
             </table>
+
             <h3>Vertical alignment</h3>
             <table>
                 <tr>
@@ -325,6 +272,19 @@
                     <td>Justify content baseline</td>
                 </tr>
             </table>
+
+            <h3>Direction</h3>
+            <table>
+                <tr>
+                    <td><code>flex-inline</code></td>
+                    <td>Display inline flex-box</td>
+                </tr>
+                <tr>
+                    <td><code>flex-column</code></td>
+                    <td>Display flex-box vertically</td>
+                </tr>
+            </table>
+
 
             <h3>Wrap and Reverse</h3>
             <table>
@@ -370,26 +330,26 @@
         <hr>
         <section>
             <h2 id="position">Position</h2>
-            <pre><code>p-{option}</code></pre>
+            <pre><code>position-{option}</code></pre>
             <table>
                 <tr>
-                    <td><code>p-absolute</code></td>
+                    <td><code>position-absolute</code></td>
                     <td>Position absolute</td>
                 </tr>
                 <tr>
-                    <td><code>p-relative</code></td>
+                    <td><code>position-relative</code></td>
                     <td>Position relative</td>
                 </tr>
                 <tr>
-                    <td><code>p-static</code></td>
+                    <td><code>position-static</code></td>
                     <td>Position static</td>
                 </tr>
                 <tr>
-                    <td><code>p-sticky</code></td>
+                    <td><code>position-sticky</code></td>
                     <td>Position sticky</td>
                 </tr>
                 <tr>
-                    <td><code>p-inherit</code></td>
+                    <td><code>position-inherit</code></td>
                     <td>Position inherit</td>
                 </tr>
             </table>
@@ -443,37 +403,37 @@
                     <td>Empty, light or dark</td>
                 </tr>
             </table>
-            <div class="flex w-children-1-3@s">
+            <div class="flex-start@s child-w-1-3@s">
                 <div class="text-center p-4 bg-primary-light">bg-primary-light</div>
                 <div class="text-center p-4 bg-primary">bg-primary</div>
                 <div class="text-center p-4 bg-primary-dark">bg-primary-dark</div>
             </div>
-            <div class="flex w-children-1-3@s">
+            <div class="flex-start@s child-w-1-3@s">
                 <div class="text-center p-4 bg-white-light">bg-white-light</div>
                 <div class="text-center p-4 bg-white">bg-white</div>
                 <div class="text-center p-4 bg-white-dark">bg-white-dark</div>
             </div>
-            <div class="flex w-children-1-3@s">
+            <div class="flex-start@s child-w-1-3@s">
                 <div class="text-center p-4 bg-black-light color-white">bg-black-light</div>
                 <div class="text-center p-4 bg-black color-white">bg-black</div>
                 <div class="text-center p-4 bg-black-dark color-white">bg-black-dark</div>
             </div>
-            <div class="flex w-children-1-3@s">
+            <div class="flex-start@s child-w-1-3@s">
                 <div class="text-center p-4 bg-success-light">bg-success-light</div>
                 <div class="text-center p-4 bg-success">bg-success</div>
                 <div class="text-center p-4 bg-success-dark">bg-success-dark</div>
             </div>
-            <div class="flex w-children-1-3@s">
+            <div class="flex-start@s child-w-1-3@s">
                 <div class="text-center p-4 bg-info-light">bg-info-light</div>
                 <div class="text-center p-4 bg-info">bg info</div>
                 <div class="text-center p-4 bg-info-dark">bg info-dark</div>
             </div>
-            <div class="flex w-children-1-3@s">
+            <div class="flex-start@s child-w-1-3@s">
                 <div class="text-center p-4 bg-warn-light">bg-warn-light</div>
                 <div class="text-center p-4 bg-warn">bg-warn</div>
                 <div class="text-center p-4 bg-warn-dark">bg-warn-dark</div>
             </div>
-            <div class="flex w-children-1-3@s">
+            <div class="flex-start@s child-w-1-3@s">
                 <div class="text-center p-4 bg-danger-light">bg-danger-light</div>
                 <div class="text-center p-4 bg-danger">bg-danger</div>
                 <div class="text-center p-4 bg-danger-dark">bg-danger-dark</div>
@@ -482,6 +442,24 @@
                 Some colors have a dark-mode alternative that are applied if the class
                 <code>dark-mode</code> is added to the body tag
             </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="#visibility">Visibility</h2>
+            <table>
+                <tr>
+                    <td><code>hide</code></td>
+                    <td>Display set to none on all screens</td>
+                    <td><code>hide@s</code></td>
+                    <td>Display set to none on small screens and up</td>
+                    <td><code>hide@m</code></td>
+                    <td>Display set to none on medium screens and up </td>
+                    <td><code>hide@l</code></td>
+                    <td>Display set to none on large screens and up </td>
+                </tr>
+            </table>
         </section>
 
         <script src="js/script.js"></script>

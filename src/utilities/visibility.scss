@@ -1,0 +1,21 @@
+/* ------------------------ Visibility ------------------------ */
+
+.hide {
+    display: none;
+}
+
+@media (min-width: $breakpoint-s) {
+    .hide\@s {
+        display: none;
+    }
+}
+@media (min-width: $breakpoint-m) {
+    .hide\@m {
+        display: none;
+    }
+}
+@media (min-width: $breakpoint-l) {
+    .hide\@l {
+        display: none;
+    }
+}
