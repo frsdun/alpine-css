@@ -36,6 +36,7 @@
             <ul>
                 <li><a href="#spacing">Spacing</a></li>
                 <li><a href="#width">Width</a></li>
+                <li><a href="#min-width">Min width</a></li>
                 <li><a href="#flex">Flex</a></li>
                 <li><a href="#display">Display</a></li>
                 <li><a href="#position">Position</a></li>
@@ -213,6 +214,56 @@
         </section>
         <hr>
         <section>
+            <h2 id="min-width">Min width</h2>
+            <p>
+                Utility classes to set the minimum width of elements
+            </p>
+
+            <pre><code>min-w-{size}@{screen-size?}</code></pre>
+            <table>
+
+                <tr>
+                    <td>{size}</td>
+                    <td>
+                        Fixed: s, m, l, xl, xxl, xxxl
+                    </td>
+                </tr>
+                <tr>
+                    <td>{screen-size?}</td>
+                    <td>
+                        empty = at all screen sizes<br>
+                        @s = at small breakpoint and up<br>
+                        @m = at medium breakpoint and up<br>
+                        @l = at large breakpoint and up
+                    </td>
+                </tr>
+            </table>
+            <h3>Examples</h3>
+            <table>
+                <tr>
+                    <td><code>min-w-m</code></td>
+                    <td>Width medium</td>
+                </tr>
+                <tr>
+                    <td><code>min-w-m@l</code></td>
+                    <td>Width medium on large screens and up</td>
+                </tr>
+            </table>
+
+            <h3>Default sizes</h3>
+            <ul>
+                <li>s = 15rem / 150px</li>
+                <li>m = 30rem / 300px</li>
+                <li>l = 45rem / 450px</li>
+                <li>xl = 64rem / 640px</li>
+                <li>xxl = 96rem / 960px</li>
+                <li>xxxl = 120rem / 1200px</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
             <h2 id="flex">Flex</h2>
             <p>
                 Utility classes to set the display property to flex-box<br>
@@ -388,7 +439,7 @@
         <hr>
 
         <section>
-            <h2 id="#visibility">Visibility</h2>
+            <h2 id="visibility">Visibility</h2>
             <table>
                 <tr>
                     <td><code>hide</code></td>

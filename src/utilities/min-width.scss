@@ -1,0 +1,50 @@
+/* ------------------------ Min-Width ------------------------ */
+
+// Fixed: s,m,l,xl,xxl,xxxl
+// Min-width can be applied at a breakpoint: always, s, m, l
+
+// Syntax min-w-<fixed>@<breakpoint>
+// min-w-s = min-width:15rem
+
+$width-fixed-small: 15rem !default;
+$width-fixed-medium: 30rem !default;
+$width-fixed-large: 45rem !default;
+$width-fixed-x-large: $breakpoint-s !default; // 64rem
+$width-fixed-xx-large: $breakpoint-m !default; // 96rem
+$width-fixed-xxx-large: $breakpoint-l !default; // 120rem
+
+@mixin build-widths($breakpoint-name) {
+  // Fixed
+  .min-w-s#{$breakpoint-name} {
+    min-width: $width-fixed-small;
+  }
+  .min-w-m#{$breakpoint-name} {
+    min-width: $width-fixed-medium;
+  }
+  .min-w-l#{$breakpoint-name} {
+    min-width: $width-fixed-large;
+  }
+  .min-w-xl#{$breakpoint-name} {
+    min-width: $width-fixed-x-large;
+  }
+  .min-w-xxl#{$breakpoint-name} {
+    min-width: $width-fixed-xx-large;
+  }
+  .min-w-xxxl#{$breakpoint-name} {
+    min-width: $width-fixed-xxx-large;
+  }
+}
+
+// Apply the mixin defined above
+
+@include build-widths("");
+
+@media (min-width: $breakpoint-s) {
+  @include build-widths("\\@s");
+}
+@media (min-width: $breakpoint-m,) {
+  @include build-widths("\\@m");
+}
+@media (min-width: $breakpoint-l) {
+  @include build-widths("\\@l");
+}
