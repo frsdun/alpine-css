@@ -1,96 +1,96 @@
 /* ------------------------ Flex ------------------------ */
 
 @mixin flex-builder($breakpoint-name) {
-    // .flex#{$breakpoint-name} {
-    //     display: flex;
-    //     flex-flow: row nowrap;
-    //     justify-content: space-between;
-    // }
+  // .flex#{$breakpoint-name} {
+  //     display: flex;
+  //     flex-flow: row nowrap;
+  //     justify-content: space-between;
+  // }
 
-    // Direction
-    .flex-inline#{$breakpoint-name} {
-        display: inline-flex;
-    }
-    .flex-column#{$breakpoint-name} {
-        display: flex;
-        flex-flow: column nowrap;
-    }
+  // Direction
+  .flex-inline#{$breakpoint-name} {
+    display: inline-flex;
+  }
+  .flex-column#{$breakpoint-name} {
+    display: flex;
+    flex-flow: column nowrap;
+  }
 
-    // Horizontal alignment
-    .flex-start#{$breakpoint-name} {
-        display: flex;
-        justify-content: start;
-    }
-    .flex-center#{$breakpoint-name} {
-        display: flex;
-        justify-content: center;
-    }
-    .flex-end#{$breakpoint-name} {
-        display: flex;
-        justify-content: end;
-    }
-    .flex-between#{$breakpoint-name} {
-        display: flex;
-        justify-content: space-between;
-    }
-    .flex-around#{$breakpoint-name} {
-        display: flex;
-        justify-content: space-around;
-    }
-    .flex-evenly#{$breakpoint-name} {
-        display: flex;
-        justify-content: space-evenly;
-    }
+  // Horizontal alignment
+  .flex-start#{$breakpoint-name} {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .flex-center#{$breakpoint-name} {
+    display: flex;
+    justify-content: center;
+  }
+  .flex-end#{$breakpoint-name} {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .flex-between#{$breakpoint-name} {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex-around#{$breakpoint-name} {
+    display: flex;
+    justify-content: space-around;
+  }
+  .flex-evenly#{$breakpoint-name} {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    // Vertical alignment
-    .flex-top#{$breakpoint-name} {
-        display: flex;
-        align-items: start;
-    }
-    .flex-middle#{$breakpoint-name} {
-        display: flex;
-        align-items: center;
-    }
-    .flex-bottom#{$breakpoint-name} {
-        display: flex;
-        align-items: end;
-    }
-    .flex-stretch#{$breakpoint-name} {
-        display: flex;
-        align-items: stretch;
-    }
-    .flex-baseline#{$breakpoint-name} {
-        align-items: baseline;
-    }
+  // Vertical alignment
+  .flex-top#{$breakpoint-name} {
+    display: flex;
+    align-items: flex-start;
+  }
+  .flex-middle#{$breakpoint-name} {
+    display: flex;
+    align-items: center;
+  }
+  .flex-bottom#{$breakpoint-name} {
+    display: flex;
+    align-items: flex-end;
+  }
+  .flex-stretch#{$breakpoint-name} {
+    display: flex;
+    align-items: stretch;
+  }
+  .flex-baseline#{$breakpoint-name} {
+    align-items: baseline;
+  }
 
-    // Wrap
-    .flex-wrap#{$breakpoint-name} {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .flex-wrap-reverse#{$breakpoint-name} {
-        display: flex;
-        flex-wrap: wrap-reverse;
-    }
+  // Wrap
+  .flex-wrap#{$breakpoint-name} {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flex-wrap-reverse#{$breakpoint-name} {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
 
-    // Reverse
-    .flex-reverse#{$breakpoint-name} {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-    .flex-column-reverse#{$breakpoint-name} {
-        display: flex;
-        flex-direction: column-reverse;
-    }
+  // Reverse
+  .flex-reverse#{$breakpoint-name} {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .flex-column-reverse#{$breakpoint-name} {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 @include flex-builder("");
 @media (min-width: $breakpoint-s) {
-    @include flex-builder("\\@s");
+  @include flex-builder("\\@s");
 }
 @media (min-width: $breakpoint-m) {
-    @include flex-builder("\\@m");
+  @include flex-builder("\\@m");
 }
 @media (min-width: $breakpoint-l) {
-    @include flex-builder("\\@l");
+  @include flex-builder("\\@l");
 }
