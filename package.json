@@ -16,7 +16,7 @@
         "publish": "./publish.sh"
     },
     "devDependencies": {
-        "node-sass": "^4.12.0",
+        "node-sass": "^7.0.0",
         "uglifycss": "0.0.29"
     }
 }
